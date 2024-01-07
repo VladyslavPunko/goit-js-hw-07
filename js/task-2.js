@@ -27,3 +27,48 @@ const images = [
     alt: 'Zebras on Zebra',
   },
 ];
+
+
+// const galleryList = document.querySelector('.gallery');
+
+// // Створюємо фрагмент для швидкої додавання елементів до DOM
+// const fragment = document.createDocumentFragment();
+
+// // Проходимося по масиву images та створюємо для кожного зображення li з img
+// images.forEach(image => {
+//   const listItem = document.createElement('li');
+//   const imageElement = document.createElement('img');
+
+//   imageElement.src = image.url;
+//   imageElement.alt = image.alt;
+  
+//   listItem.appendChild(imageElement);
+//   fragment.appendChild(listItem);
+// });
+
+// // Додаємо фрагмент з усіма елементами до ul.gallery за одну операцію
+// galleryList.appendChild(fragment);
+
+
+
+const galary = document.querySelector(`ul.gallery`);
+
+const fragment = document.createDocumentFragment();
+
+images.forEach(image => {
+
+const elemLi = document.createElement(`li`);
+const  elemImg = document.createElement(`img`);
+
+elemImg.src = image.url;
+elemImg.alt = image.alt;
+
+elemLi.appendChild(elemImg);
+fragment.appendChild(elemLi);
+
+});
+
+galary.appendChild(fragment);
+
+
+
